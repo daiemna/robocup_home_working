@@ -1,0 +1,26 @@
+roslaunch usb_cam usb_cam.launch
+
+rosrun face_recognition Fserver
+rosrun face_recognition Fclient
+
+To start recognize once:
+rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 0 "none"
+
+To recognize continuously:
+rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 1 "none" 
+
+
+To acquire training images:
+rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 2 "your_name"
+To retrain and update the database, so that you can be recognized 
+rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 3 "none"
+
+rostopic pub -1 /fr_order face_recognition/FRClientGoal -- 4 "none" 
+
+================================================
+confidence_value (double, default = 0.88):
+A face recognized with confidence value higher than the "confidence_value" threshold is accepted as valid. 
+show_screen_flag (boolean, default = true):
+If output screen is shown. 
+add_face_number (int, default = 25):
+A parameter for the 'add_face_images' goal (order_id = 2) which determines the number of training images for a new person to be acquired from the video stream 
