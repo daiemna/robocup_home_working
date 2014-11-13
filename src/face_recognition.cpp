@@ -57,11 +57,11 @@ public:
     textColor = CV_RGB(0,255,255);	// light blue text
     goal_id_ = -99; 
     //a face recognized with confidence value higher than the confidence_value threshold is accepted as valid.
-    confidence_value = 0.75;
+    confidence_value = 0.92;
     //if output screen is shown
     show_screen_flag = true;
     //a parameter for the "add_face_images" goal which determines the number of training images for a new face (person) to be acquired from the video stream 
-    add_face_number = 200;
+    add_face_number = 25;
     //the number of persons in the training file (train.txt)
     person_number=0;
     //starting the actionlib server
