@@ -9,3 +9,11 @@ test:    ## Install sphinx dependencies
 test:
 	./upload_test_code.sh && \
 	pytest
+
+.PHONY: upload_code
+upload_code:    ## Install sphinx dependencies
+upload_code:
+	~/arduino-1.8.8/arduino \
+	--upload i2c_controller/i2c_slave_controller.ino \
+	--port /dev/ttyUSB0 \
+	--board arduino:avr:nano:cpu=atmega328old
