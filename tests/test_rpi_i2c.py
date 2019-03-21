@@ -1,5 +1,5 @@
 import logging
-
+import time
 log = logging.getLogger(__name__)
 
 sent_number = 110
@@ -7,7 +7,10 @@ sent_left = 121
 sent_right = 1
 sent_string = 'Hello!'
 loc=33
-write_sequence = [13,0,1,13,0,0]
+write_sequence = [13,1,1,13,1,0]
+
+turn_on_led = [13,1,1,255,255]
+turn_off_led = [13,1,0,255,255]
 
 def test_send_number(i2c_left):
     log.debug("Testing send number")
@@ -38,3 +41,11 @@ def test_read_string(i2c_left):
     i2c_left.writeString(sent_string)
     recived_string = i2c_left.readString()
     assert sent_string == recived_string
+
+def test_led(i2c_left):
+    log.debug("LED test!")
+    for i in range(3):
+        i2c_left.writeSequence(turn_on_led)
+        time.sleep(1)
+        i2c_left.writeSequence(turn_off_led)
+        time.sleep(1)
