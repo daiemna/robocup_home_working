@@ -5,3 +5,4 @@ dependencies:
 - pip:
   - smbus2
   - pytest
+  - ruamel.yaml
