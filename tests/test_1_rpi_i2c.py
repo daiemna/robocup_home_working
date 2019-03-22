@@ -41,11 +41,3 @@ def test_read_string(i2c_left):
     i2c_left.writeString(sent_string)
     recived_string = i2c_left.readString()
     assert sent_string == recived_string
-
-def test_led(i2c_left):
-    log.debug("LED test!")
-    for i in range(3):
-        i2c_left.writeSequence(turn_on_led)
-        time.sleep(1)
-        i2c_left.writeSequence(turn_off_led)
-        time.sleep(1)
