@@ -1,0 +1,8 @@
+build/
+devel/
+.vscode/
+.catkin_workspace
+.rosrc
+*.log
+
+rosconsole.config
