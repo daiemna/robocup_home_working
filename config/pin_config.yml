@@ -1,22 +1,24 @@
 devices:
-  - type: arduino
+  - type: i2c
+    slave: true
     address: 5
     components:
-      - name: encoder
+      - type: encoder
         side: left
         pins: [9,8,7,6]
-      - name: encoder
+      - type: encoder
         side: right
         pins: [5,4,3,2]
-  - type: arduino
+  - type: i2c
+    slave: true
     address: 21
     components:
-    - name: motor
+    - type: motor
       side: left
       pins:
         enable: 2
         direction: [3, 4]
-    - name: motor
+    - type: motor
       side: right
       pins:
         enable: 11
