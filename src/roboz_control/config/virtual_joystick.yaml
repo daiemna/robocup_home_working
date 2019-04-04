@@ -1,0 +1,5 @@
+publish_rate: 50 # The rate at which to publish the twist topic 
+x_max: 1.0 # The maximum forward velocity to publish (in meters/second) 
+x_min: -1.0 # The minimum forward velocity to publish (in meters/second) 
+r_max: 10  # The maximum rotational velocity to publish (in radians/second) 
+r_min: 0

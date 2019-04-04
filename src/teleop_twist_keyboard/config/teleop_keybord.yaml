@@ -1,0 +1,6 @@
+max_speed: 1 
+min_speed: -1 
+max_turn: 10
+min_turn: -10
+speed_factor: 1
+turn_factor: 1

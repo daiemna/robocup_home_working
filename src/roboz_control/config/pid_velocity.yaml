@@ -1,0 +1,10 @@
+Kp: 80
+Ki: 30
+Kd: 0.09
+
+out_min: -255
+out_max: 255
+
+vel_threshold: 0.01
+
+rate: 20

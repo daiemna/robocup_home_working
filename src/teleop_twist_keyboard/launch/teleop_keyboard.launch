@@ -1,0 +1,8 @@
+<launch>
+    <node pkg="teleop_twist_keyboard" 
+          type="teleop_twist_keyboard.py" 
+          name="teleop_twist_keyboard">
+        <rosparam file="$(find teleop_twist_keyboard)/config/teleop_keybord.yaml" 
+                  command="load"/>
+    </node>
+</launch>

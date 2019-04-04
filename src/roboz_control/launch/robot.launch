@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+    <node pkg="differential_drive" type="twist_to_motors.py" name="twist_to_motors">
+        <rosparam file="$(find roboz_control)/config/twist_to_motors.yaml"
+                  command="load"/>
+        <remap from="twist" to="/cmd_vel"/>
+    </node>
+
+    <node pkg="differential_drive" type="pid_velocity.py" name="left_pid_velocity">
+        <rosparam file="$(find roboz_control)/config/pid_velocity.yaml" 
+                  command="load"/>
+        <remap from="motor_cmd" to="lmotor_cmd"/>
+        <remap from="wheel_vel" to="lwheel_vel"/>
+        <remap from="wheel_vtarget" to="lwheel_vtarget"/>
+    </node>
+
+    <node pkg="differential_drive" type="pid_velocity.py" name="right_pid_velocity">
+        <rosparam file="$(find roboz_control)/config/pid_velocity.yaml" 
+                  command="load"/>
+        <remap from="motor_cmd" to="rmotor_cmd"/>
+        <remap from="wheel_vel" to="rwheel_vel"/>
+        <remap from="wheel_vtarget" to="rwheel_vtarget"/>
+    </node>
+
+</launch>

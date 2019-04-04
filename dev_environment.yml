@@ -1,0 +1,14 @@
+name: ros_kinect
+
+dependencies:
+- python=2.7
+- pip:
+  - numpy
+  - smbus2
+  - pytest
+  - ruamel.yaml
+  - bluepy
+  - evdev
+  - rosinstall_generator
+  - wstool
+  - pyside2
