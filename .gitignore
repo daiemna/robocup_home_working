@@ -6,3 +6,4 @@ devel/
 *.log
 
 rosconsole.config
+src/CMakeLists.txt
